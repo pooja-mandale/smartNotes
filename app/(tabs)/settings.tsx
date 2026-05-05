@@ -140,6 +140,12 @@ export default function SettingsScreen() {
                         label="Privacy Policy"
                         onPress={() => Linking.openURL('https://thinkstack.app/privacy')}
                     />
+                    <Divider />
+                    <SettingItem
+                        icon="globe-outline"
+                        label="Developer Portfolio"
+                        onPress={() => Linking.openURL('https://poojaMandale.vercel.app')}
+                    />
                 </Surface>
 
                 <View style={styles.footer}>
