@@ -55,6 +55,11 @@ export default function SettingsScreen() {
         { name: 'Rose', color: '#F43F5E' },
         { name: 'Amber', color: '#F59E0B' },
         { name: 'Sky', color: '#0EA5E9' },
+        { name: 'Purple', color: '#A855F7' },
+        { name: 'Pink', color: '#EC4899' },
+        { name: 'Orange', color: '#F97316' },
+        { name: 'Teal', color: '#14B8A6' },
+        { name: 'Slate', color: '#64748B' },
     ];
 
     return (
@@ -250,7 +255,9 @@ const styles = StyleSheet.create({
     },
     colorRow: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: 12,
+        justifyContent: 'flex-start',
     },
     colorCircle: {
         width: 40,
