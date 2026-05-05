@@ -70,9 +70,14 @@ export default function SettingsScreen() {
                     <View style={[styles.avatarContainer, { backgroundColor: theme.colors.primaryContainer }]}>
                         <Ionicons name="person" size={32} color={theme.colors.primary} />
                     </View>
-                    <View>
-                        <Text variant="titleLarge" style={[styles.profileName, { color: theme.colors.onSurface }]}>ThinkStack User</Text>
-                        <Text variant="bodyMedium" style={{ color: theme.colors.secondary }}>Offline Personal Vault</Text>
+                    <View style={{ flex: 1, justifyContent: 'center' }}>
+                        <Text variant="headlineSmall" style={[styles.profileName, { color: theme.colors.onSurface }]}>
+                            ThinkStack <Text style={{ color: theme.colors.primary }}>User</Text>
+                        </Text>
+                        <View style={styles.badgeRow}>
+                            <Ionicons name="shield-checkmark" size={14} color={theme.colors.primary} />
+                            <Text variant="labelMedium" style={[styles.profileSubtitle, { color: theme.colors.secondary }]}>Offline Vault Active</Text>
+                        </View>
                     </View>
                 </Surface>
 
@@ -219,7 +224,23 @@ const styles = StyleSheet.create({
         marginRight: 16,
     },
     profileName: {
-        fontWeight: 'bold',
+        fontWeight: '900',
+        letterSpacing: 0.5,
+    },
+    profileSubtitle: {
+        marginLeft: 4,
+        fontWeight: '600',
+        letterSpacing: 0.5,
+    },
+    badgeRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 4,
+        paddingHorizontal: 8,
+        paddingVertical: 4,
+        backgroundColor: 'rgba(100, 150, 200, 0.1)',
+        borderRadius: 12,
+        alignSelf: 'flex-start',
     },
     sectionHeader: {
         marginBottom: 12,
