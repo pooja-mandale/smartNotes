@@ -48,14 +48,23 @@
           }
         }
       ],
-      "expo-notifications"
+      "expo-notifications",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
     },
     "extra": {
-      "router": {}
+      "router": {
+        "headers": {
+          "Cross-Origin-Embedder-Policy": "credentialless",
+          "Cross-Origin-Opener-Policy": "same-origin"
+        }
+      },
+      "eas": {
+        "projectId": "74b8e531-84d0-4912-a19b-92d2fd66ed8b"
+      }
     }
   }
 }
