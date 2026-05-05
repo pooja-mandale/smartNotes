@@ -1,35 +1,75 @@
+import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useTheme } from 'react-native-paper';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+    const insets = useSafeAreaInsets();
+    const theme = useTheme();
+    const { darkMode, themeColor } = useSelector((state: RootState) => state.settings);
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+    return (
+        <Tabs
+            screenOptions={{
+                tabBarActiveTintColor: themeColor,
+                tabBarInactiveTintColor: darkMode ? '#64748B' : '#94A3B8',
+                tabBarStyle: {
+                    height: 60 + insets.bottom,
+                    paddingBottom: insets.bottom + 8,
+                    paddingTop: 8,
+                    borderTopWidth: 0,
+                    backgroundColor: theme.colors.surface,
+                    elevation: 20,
+                    shadowColor: '#000',
+                    shadowOffset: { width: 0, height: -10 },
+                    shadowOpacity: darkMode ? 0.3 : 0.05,
+                    shadowRadius: 20,
+                },
+                headerShown: false,
+                tabBarLabelStyle: {
+                    fontWeight: '600',
+                    fontSize: 11,
+                },
+            }}
+        >
+            <Tabs.Screen
+                name="index"
+                options={{
+                    title: 'Notes',
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <Ionicons name={focused ? "book" : "book-outline"} size={size} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="review"
+                options={{
+                    title: 'Review',
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <Ionicons name={focused ? "repeat" : "repeat-outline"} size={size} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="progress"
+                options={{
+                    title: 'Stats',
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <Ionicons name={focused ? "analytics" : "analytics-outline"} size={size} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="settings"
+                options={{
+                    title: 'Settings',
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <Ionicons name={focused ? "settings" : "settings-outline"} size={size} color={color} />
+                    ),
+                }}
+            />
+        </Tabs>
+    );
 }

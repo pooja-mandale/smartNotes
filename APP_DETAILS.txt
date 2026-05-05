@@ -1,0 +1,32 @@
+APP DETAILS
+
+App Name: ThinkStack
+
+Short Description:
+Boost learning with smart notes, mind maps, and spaced repetition flashcards.
+
+Long Description:
+Master your studies and organize your thoughts with ThinkStack, the ultimate offline companion for efficient learning. ThinkStack combines powerful note-taking with scientific study methods to help you remember more in less time.
+
+Key Features:
+*   Smart Note-Taking: Create and organize detailed notes into notebooks.
+*   Visual Mind Maps: Visualize connections between ideas with an integrated mind-mapping tool.
+*   Spaced Repetition System (SRS): Built-in flashcards use active recall algorithms to ensure you review concepts at the perfect time.
+*   Study Timer: Stay focused and manage your study sessions effectively.
+*   Progress Tracking: Visualize your learning progress and review statistics to stay motivated.
+*   100% Offline: Access all your data anytime, anywhere, without an internet connection.
+*   Dark & Light Modes: A beautiful, responsive interface that adapts to your preference.
+
+________________________________________________________
+
+BUNDLE & KEYSTORE INFORMATION
+
+Application ID (Bundle ID): com.inficom.thinkstack
+
+Sensitive Keystore information:
+    Keystore password: b4730e9998bbc7f1ade7585b7a0d0cd9
+    Key alias:         105c9822300a5735ad3dbe9f55a40ee4
+    Key password:      41aa29f54ca4ed2a76b393278ebe0b0a
+
+    Path to Keystore:  @somesh_holkar__thinkstack.jks
+
